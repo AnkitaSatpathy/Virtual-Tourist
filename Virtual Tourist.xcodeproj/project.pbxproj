@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		BC1334431F6EBB8900886F99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1334421F6EBB8900886F99 /* AppDelegate.swift */; };
-		BC1334451F6EBB8900886F99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1334441F6EBB8900886F99 /* ViewController.swift */; };
+		BC1334451F6EBB8900886F99 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1334441F6EBB8900886F99 /* MapViewController.swift */; };
 		BC1334481F6EBB8900886F99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC1334461F6EBB8900886F99 /* Main.storyboard */; };
 		BC13344A1F6EBB8900886F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1334491F6EBB8900886F99 /* Assets.xcassets */; };
 		BC13344D1F6EBB8900886F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC13344B1F6EBB8900886F99 /* LaunchScreen.storyboard */; };
+		BCA4FCAC1F6F7098001C98B4 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4FCAB1F6F7098001C98B4 /* PhotoAlbumViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BC13343F1F6EBB8900886F99 /* Virtual Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Tourist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1334421F6EBB8900886F99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC1334441F6EBB8900886F99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC1334441F6EBB8900886F99 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BC1334471F6EBB8900886F99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC1334491F6EBB8900886F99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC13344C1F6EBB8900886F99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC13344E1F6EBB8900886F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCA4FCAB1F6F7098001C98B4 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,22 @@
 			isa = PBXGroup;
 			children = (
 				BC1334421F6EBB8900886F99 /* AppDelegate.swift */,
-				BC1334441F6EBB8900886F99 /* ViewController.swift */,
+				BC1334541F6EC3BC00886F99 /* Controller */,
 				BC1334461F6EBB8900886F99 /* Main.storyboard */,
 				BC1334491F6EBB8900886F99 /* Assets.xcassets */,
 				BC13344B1F6EBB8900886F99 /* LaunchScreen.storyboard */,
 				BC13344E1F6EBB8900886F99 /* Info.plist */,
 			);
 			path = "Virtual Tourist";
+			sourceTree = "<group>";
+		};
+		BC1334541F6EC3BC00886F99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC1334441F6EBB8900886F99 /* MapViewController.swift */,
+				BCA4FCAB1F6F7098001C98B4 /* PhotoAlbumViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC1334451F6EBB8900886F99 /* ViewController.swift in Sources */,
+				BC1334451F6EBB8900886F99 /* MapViewController.swift in Sources */,
 				BC1334431F6EBB8900886F99 /* AppDelegate.swift in Sources */,
+				BCA4FCAC1F6F7098001C98B4 /* PhotoAlbumViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +324,7 @@
 				BC1334531F6EBB8900886F99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
