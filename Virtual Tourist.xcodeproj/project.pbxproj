@@ -19,6 +19,8 @@
 		BC74B3491F88EDE5008E66FF /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74B3451F88EDE5008E66FF /* Image+CoreDataProperties.swift */; };
 		BC74B34B1F88F70D008E66FF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74B34A1F88F70D008E66FF /* CoreDataStack.swift */; };
 		BCA4FCAC1F6F7098001C98B4 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4FCAB1F6F7098001C98B4 /* PhotoAlbumViewController.swift */; };
+		BCF42CA11F8B7F3A004D892D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF42CA01F8B7F3A004D892D /* CollectionViewCell.swift */; };
+		BCF42CA41F8BD9A4004D892D /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF42CA31F8BD9A4004D892D /* FlickrClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		BC74B3451F88EDE5008E66FF /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC74B34A1F88F70D008E66FF /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BCA4FCAB1F6F7098001C98B4 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		BCF42CA01F8B7F3A004D892D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		BCF42CA31F8BD9A4004D892D /* FlickrClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +56,6 @@
 		BC1334361F6EBB8900886F99 = {
 			isa = PBXGroup;
 			children = (
-				BC74B3421F88EDE5008E66FF /* Pin+CoreDataClass.swift */,
-				BC74B3431F88EDE5008E66FF /* Pin+CoreDataProperties.swift */,
-				BC74B3441F88EDE5008E66FF /* Image+CoreDataClass.swift */,
-				BC74B3451F88EDE5008E66FF /* Image+CoreDataProperties.swift */,
-				BC74B34A1F88F70D008E66FF /* CoreDataStack.swift */,
 				BC1334411F6EBB8900886F99 /* Virtual Tourist */,
 				BC1334401F6EBB8900886F99 /* Products */,
 			);
@@ -97,8 +96,23 @@
 		BC74B33E1F88DBB5008E66FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCF42CA21F8B9A29004D892D /* Flickr API */,
+				BC74B3421F88EDE5008E66FF /* Pin+CoreDataClass.swift */,
+				BC74B3451F88EDE5008E66FF /* Image+CoreDataProperties.swift */,
+				BC74B3431F88EDE5008E66FF /* Pin+CoreDataProperties.swift */,
+				BC74B34A1F88F70D008E66FF /* CoreDataStack.swift */,
+				BC74B3441F88EDE5008E66FF /* Image+CoreDataClass.swift */,
+				BCF42CA01F8B7F3A004D892D /* CollectionViewCell.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		BCF42CA21F8B9A29004D892D /* Flickr API */ = {
+			isa = PBXGroup;
+			children = (
+				BCF42CA31F8BD9A4004D892D /* FlickrClient.swift */,
+			);
+			name = "Flickr API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF42CA11F8B7F3A004D892D /* CollectionViewCell.swift in Sources */,
 				BC74B3411F88DC6C008E66FF /* VCDataModel.xcdatamodeld in Sources */,
 				BC74B3471F88EDE5008E66FF /* Pin+CoreDataProperties.swift in Sources */,
 				BC74B3481F88EDE5008E66FF /* Image+CoreDataClass.swift in Sources */,
@@ -179,6 +194,7 @@
 				BC74B3461F88EDE5008E66FF /* Pin+CoreDataClass.swift in Sources */,
 				BC1334451F6EBB8900886F99 /* MapViewController.swift in Sources */,
 				BC1334431F6EBB8900886F99 /* AppDelegate.swift in Sources */,
+				BCF42CA41F8BD9A4004D892D /* FlickrClient.swift in Sources */,
 				BCA4FCAC1F6F7098001C98B4 /* PhotoAlbumViewController.swift in Sources */,
 				BC74B3491F88EDE5008E66FF /* Image+CoreDataProperties.swift in Sources */,
 			);
