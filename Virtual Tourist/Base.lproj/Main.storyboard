@@ -67,7 +67,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No images available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0G1-0A-PTz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="426"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -133,6 +133,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="7NO-vf-9cS" id="HEm-gh-AY5"/>
+                        <outlet property="flowLayout" destination="7NO-vf-9cS" id="XbI-KV-rq8"/>
                         <outlet property="mapView" destination="Sol-zf-Rl2" id="Kv3-Hc-Rsm"/>
                         <outlet property="newCollectionBtn" destination="gwZ-kD-6ww" id="nIg-YO-hC8"/>
                         <outlet property="noImageLabel" destination="0G1-0A-PTz" id="xkf-Fu-oNK"/>

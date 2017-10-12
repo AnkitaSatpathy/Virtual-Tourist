@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class FlickrClient: NSObject {
     
@@ -20,7 +21,7 @@ class FlickrClient: NSObject {
     
     func taskForGETMethodWithParameters(_ parameters: [String:AnyObject],
                                         completionHandler: @escaping(_ result: AnyObject?, _ error: Error?) -> Void){
-        let urlString = ""
+        let urlString = Constants.BaseURL + FlickrClient.escapedParameters(parameters)
         let request = URLRequest(url: URL(string: urlString)!)
         
         let task = session.dataTask(with: request) { (data, response, downloadError) in
@@ -84,7 +85,7 @@ class FlickrClient: NSObject {
             if(!key.isEmpty) {
                 let stringValue = "\(value)"
                 let escapedValue = stringValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                escapedUrl.append(key + "=" + "\(escapedValue)")
+                escapedUrl.append(key + "=" + "\(escapedValue!)")
                 
             }
         }
@@ -99,6 +100,64 @@ class FlickrClient: NSObject {
         }
         alert.addAction(action)
          viewController.present(alert, animated: true, completion: nil)
+    }
+    
+    func searchPhotosForPin(_ pin: Pin, completionHandler: @escaping (_ photoURLS: [String]?, _ error: Error?) -> Void) {
+        
+        let parameters: [String : AnyObject] = [
+            URLKeys.Method : Methods.Search as AnyObject,
+            URLKeys.APIKey : Constants.APIKey as AnyObject,
+            URLKeys.Format : URLValues.JSONFormat as AnyObject,
+            URLKeys.NoJSONCallback : 1 as AnyObject,
+            URLKeys.Latitude : pin.latitude as AnyObject,
+            URLKeys.Longitude : pin.longitude as AnyObject,
+            URLKeys.Extras : URLValues.URLMediumPhoto as AnyObject,
+            URLKeys.Page : "\(arc4random_uniform(10))" as AnyObject,
+            URLKeys.PerPage : 10 as AnyObject
+        ]
+        taskForGETMethodWithParameters(parameters) { (results, error) in
+            if let error = error {
+                completionHandler(nil, error)
+            }
+            else{
+                if let photosDict = results?.value(forKey:JSONResponseKeys.Photos) as? [String:AnyObject],
+                    let photosArray = photosDict[JSONResponseKeys.Photo] as? [[String:AnyObject]]{
+                    
+                    var photoURLS = [String]()
+                    
+                    for photo in photosArray {
+                        guard let photoURL = photo[URLValues.URLMediumPhoto] as? String else {
+                            print("Error")
+                            return
+                        }
+                        photoURLS.append(photoURL)
+                        
+                
+                    }
+                   completionHandler(photoURLS, nil)
+            }
+                else{
+                    completionHandler(nil, error)
+                }
+        }
+    }
+}
+    
+    func downloadPhotos(photoURL:String, completionHandlerForDownloadPhotos: @escaping (_ image: Data?, _ error: Error?) -> Void)
+    {
+        let url = NSURL(string: photoURL)
+        let request = URLRequest(url: url! as URL)
+        
+        let task = session.dataTask(with: request){ data, response, downloadError in
+            
+            guard let data = data else
+            {
+                completionHandlerForDownloadPhotos(nil,downloadError)
+                return
+            }
+            completionHandlerForDownloadPhotos(data, nil)
+        }
+        task.resume()
     }
     
     class func sharedInstance() -> FlickrClient {
